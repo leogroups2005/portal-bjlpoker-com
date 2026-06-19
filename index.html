@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于百家乐 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(145deg, #fbe9e0 0%, #f4d4c0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(150, 80, 40, 0.2), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+            padding: 2.8rem 2.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        @media (max-width: 580px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .content-card {
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+        }
+
+        /* 标题与导语 */
+        .article-header {
+            margin-bottom: 2.4rem;
+            border-bottom: 2px solid #f3ded3;
+            padding-bottom: 1.2rem;
+        }
+
+        .article-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #4f2e1e;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: #a07d6b;
+            background: #faf0ea;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            margin-top: 0.2rem;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: #3b281f;
+            background: #f9ede7;
+            padding: 1.2rem 1.6rem;
+            border-radius: 20px;
+            margin: 1.8rem 0 2rem 0;
+            border-left: 4px solid #c18d73;
+            line-height: 1.8;
+        }
+
+        /* 正文段落 */
+        .article-body p {
+            margin-bottom: 1.6rem;
+            color: #2f221c;
+            font-size: 1rem;
+        }
+
+        .article-body p strong {
+            color: #794f36;
+            font-weight: 600;
+        }
+
+        .article-body a {
+            color: #9a5f3f;
+            text-decoration: none;
+            font-weight: 500;
+            background: linear-gradient(to right, #f5d9cb, #f5d9cb) no-repeat 0 100%;
+            background-size: 0% 3px;
+            transition: background-size 0.25s ease, color 0.2s;
+            border-radius: 4px;
+            padding: 0 2px;
+        }
+
+        .article-body a:hover {
+            background-size: 100% 3px;
+            color: #613a25;
+        }
+
+        /* 引用提示块 */
+        .insight-box {
+            background: #faf2ed;
+            border-radius: 24px;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0 1.8rem 0;
+            border: 1px solid #e6cec0;
+            box-shadow: inset 0 1px 4px rgba(255, 235, 220, 0.7);
+        }
+
+        .insight-box .quote-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            color: #b6886e;
+            margin-right: 0.4rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .insight-box p {
+            font-style: normal;
+            color: #3f2b20;
+            margin: 0.4rem 0 0 0;
+        }
+
+        .insight-box .author-label {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #8f6a55;
+            border-top: 1px dashed #dcc3b6;
+            padding-top: 1rem;
+        }
+
+        /* 场景/特点小列表 */
+        .feature-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0 1.4rem 0;
+        }
+
+        .feature-item {
+            background: #fff7f2;
+            flex: 1 1 170px;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid #eed9ce;
+            box-shadow: 0 4px 6px -4px rgba(140, 75, 45, 0.08);
+            transition: background 0.15s;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #572f1d;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #5b4134;
+            margin-bottom: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin: 2.4rem 0 1.2rem 0;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #4f2e1e;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-mini h3:before {
+            content: "▪";
+            color: #b77d5f;
+            font-size: 1.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eddcd2;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #623d29;
+            margin-bottom: 0.2rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-a {
+            color: #3e2c23;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+
+        .faq-a a {
+            color: #9a5f3f;
+            text-decoration: none;
+            border-bottom: 1px dotted #cca28b;
+        }
+
+        .faq-a a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 访问句 / 脚注 */
+        .visit-note {
+            margin-top: 2.6rem;
+            padding-top: 1.4rem;
+            border-top: 2px solid #f0dbd0;
+            text-align: left;
+            font-size: 1rem;
+            color: #36271f;
+            background: #fcf7f4;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+        }
+
+        .visit-note strong {
+            font-weight: 500;
+            color: #4d2c1b;
+        }
+
+        .visit-note a {
+            color: #9a5f3f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #dbb8a6;
+        }
+
+        .visit-note a:hover {
+            color: #613a25;
+            border-bottom-color: #613a25;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 1.7rem;
+            }
+            .lead {
+                font-size: 1rem;
+                padding: 1rem 1.2rem;
+            }
+            .feature-summary {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="content-card">
+        <!-- 文章标题 -->
+        <div class="article-header">
+            <h1 class="article-title">百家乐 · 稳定入口与页面使用说明</h1>
+            <div class="article-meta">整理 · 2025 · 简明指引</div>
+        </div>
+
+        <!-- 导语 -->
+        <div class="lead">
+            许多朋友初次接触时，往往会因为信息分散而绕路。这篇内容围绕<a href="https://portal-bjlpoker.com">百家乐</a>的常规访问路径，梳理了页面结构、功能特点以及常见疑问，帮你更快熟悉这个界面。
+        </div>
+
+        <!-- 正文段落：从稳定入口出发 -->
+        <div class="article-body">
+            <p><strong>从何处开始？</strong> 如果你已经了解过基础规则，只是需要一个稳定的访问节点，那么直接使用主站链接是可靠的方式。整个页面围绕“快速定位”设计，没有多余的跳转干扰，首页即能完成大部分操作引导。</p>
+
+            <p>这套界面主要面向日常使用者——无论是查看近期动态、查阅简要说明，还是了解功能分区，都能在几个板块内完成。页面经过多次调整，现阶段更加注重内容层级和响应速度，在手机与电脑上都有较好的阅读体验。</p>
+
+            <p>对于<a href="https://portal-bjlpoker.com">百家乐</a>的爱好者来说，清晰的信息入口比繁复的装饰更重要。因此这个版本取消了大量动效和图片，把空间留给文字和结构，让你能够更快找到需要的部分。如果你习惯简洁的博客式布局，这种风格应该会符合预期。</p>
+        </div>
+
+        <!-- 引用提示块 -->
+        <div class="insight-box">
+            <span class="quote-icon">❝</span>
+            <p>稳定入口的核心价值不在于“快”，而在于“可预期”。每次打开页面，你都知道从哪里获取信息，不需要重新适应布局或等待加载。这是很多长期用户更看重的体验。</p>
+            <span class="author-label">—— 页面设计笔记</span>
+        </div>
+
+        <!-- 特点 / 场景卡片（简版） -->
+        <div class="feature-summary">
+            <div class="feature-item">
+                <h4>📄 内容优先</h4>
+                <p>去除冗余装饰，正文与导航一目了然，适合快速浏览。</p>
+            </div>
+            <div class="feature-item">
+                <h4>🔗 单点直达</h4>
+                <p>主要链接集中放置，减少中间跳转，降低迷失概率。</p>
+            </div>
+            <div class="feature-item">
+                <h4>🌙 低干扰阅读</h4>
+                <p>暖色调背景配合白色卡片，长时间阅读也不易疲劳。</p>
+            </div>
+        </div>
+
+        <!-- 正文继续：页面说明延伸 -->
+        <div class="article-body">
+            <p>除了基本的浏览功能，这个页面也承担了一部分“说明板”的角色——比如你可以在下方的FAQ段落里找到关于访问方式、页面结构的一些常见问题。如果你有任何不确定的地方，不妨先看看那里是否已经收录了答案。</p>
+
+            <p>最后想提醒一点：如果你是通过第三方链接或收藏夹进入，建议直接使用上述主站地址进行一次核对，避免因为缓存或旧书签导致页面显示异常。保持入口的统一，能减少很多不必要的麻烦。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <h3>常见疑问摘要</h3>
+            <div class="faq-item">
+                <div class="faq-q">• 这个页面与主站是什么关系？</div>
+                <div class="faq-a">这里是介绍与说明页，所有核心功能都指向同一站点。如有操作需求，可直接前往 <a href="https://portal-bjlpoker.com">百家乐</a> 首页。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">• 页面会频繁变动吗？</div>
+                <div class="faq-a">目前采用相对稳定的内容结构，重大更新会体现在说明文本中。你可以把当前页面当作一个常设索引。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">• 移动端和电脑端体验是否有差异？</div>
+                <div class="faq-a">基本一致。卡片和字体都做了响应式适配，两种设备下均可正常阅读与导航。</div>
+            </div>
+        </div>
+
+        <!-- 访问句 / 收尾 -->
+        <div class="visit-note">
+            <strong>📌 访问提示：</strong> 如需直接使用服务，推荐通过上方链接进入 <a href="https://portal-bjlpoker.com">百家乐</a> 主页面。本介绍页仅用于辅助说明，不替代实际功能界面。建议收藏主站地址，以获得最及时的体验。
+        </div>
+    </div>
+</div>
+</body>
+</html>

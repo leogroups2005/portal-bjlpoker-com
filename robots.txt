@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://leogroups2005.github.io/portal-bjlpoker-com/sitemap.xml
